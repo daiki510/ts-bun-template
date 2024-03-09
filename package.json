@@ -1,12 +1,14 @@
 {
-  "name": "ts-node-bun-template",
+  "name": "ts-bun-template",
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run index.ts"
+    "start": "bun run index.ts",
+    "start:watch": "bun run --watch index.ts",
+    "start:hot": "bun run --hot index.ts"
   },
   "devDependencies": {
-    "@types/bun": "^1.0.29"
+    "@types/bun": "^1.0.8"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

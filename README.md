@@ -1,4 +1,4 @@
-# ts-node-bun-template
+# ts-bun-template
 
 To install dependencies:
 

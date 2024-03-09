@@ -1,11 +1,16 @@
-import figlet from "figlet";
+declare global {
+  var items: string[];
+}
+
+globalThis.items ??= []; // itemsが未定義の場合、空の配列で初期化
 
 const server = Bun.serve({
   port: 3000,
   fetch(req) {
-    const body = figlet.textSync("Bun!");
-    return new Response(body);
-    // return new Response("Bun!");
+    // リクエストごとに配列にアイテムを追加
+    globalThis.items.push(`Item ${globalThis.items.length + 1}`);
+    // 配列の内容をレスポンスとして返す
+    return new Response(`Items: ${globalThis.items.join(", ")}`);
   },
 });
 
